@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
-
 import Details from './Details';
-
+import styled from 'styled-components';
 import "./App.css";
 
+const NasaPost = styled.div`
+background-color: #D2B48C;
+margin-bottom: -50px;
+`
+
 function App() {
+  
   const [nasaPost, setNasaPost] = useState([])
 
   useEffect(() => {
@@ -20,14 +25,13 @@ function App() {
   },[])
 
   return (
-    <div className="App">
-      <p>
-        {/* <span role="img" aria-label='go!'>🚀</span>! */}
-        {
+    <NasaPost>
+      <div className="App">
+        <p>
           <Details nasa={nasaPost}/>
-        }
-      </p>
-    </div>
+        </p>
+      </div>
+    </ NasaPost>
   );
 }
 

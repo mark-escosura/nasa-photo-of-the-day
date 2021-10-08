@@ -2,9 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import SearchBar from './components/SearchBar/SearchBar';
-import Image from './components/Image';
-import Body from './components/Body/Body';
-import Footer from './components/Footer';
+import Image from './components/Image/Image';
+import NasaBody from './components/Body/Body';
+import Footer from './components/Footer/Footer';
+import styled from 'styled-components';
+
+const NasaTitle = styled.h1`
+font-size: 1.25rem;
+`
 
 
 const Details = (props) => {
@@ -25,9 +30,9 @@ const Details = (props) => {
     return (
         <div>
             <SearchBar />
-            <h1>{details}</h1>
-            <Image url={details}/>
-            <Body explanation={details} />
+            <Image url={details} />
+            <NasaTitle> <h1>{details}</h1> </NasaTitle>
+            <NasaBody explanation={details} />
             <Footer foot={details}/>
         </div>
       )
